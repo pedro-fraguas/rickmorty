@@ -1,0 +1,12 @@
+header {
+    height: 80px;
+    background-color: darkgray;
+    text-align: center;
+    padding-top: 20px;
+}
+
+footer {
+    height: 30px;
+    background-color: darkgray;
+    padding-left: 15px;
+}
