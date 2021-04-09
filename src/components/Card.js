@@ -46,7 +46,9 @@ class Card extends Component{
                     <button 
                     className="btn-link outline" 
                     onClick={() => this.changeDefaultColor('lightgreen')}
-                    >Change Color</button>
+                    >
+                        Change Color
+                    </button>
                     <button className="btn-link outline">Delete</button>
                 </div>
 

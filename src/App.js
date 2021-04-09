@@ -15,6 +15,8 @@ class App extends Component{
             <div className="hero">
               <div className="hero-body">
                 <div className="content">
+
+                  <button className='u-center btn-link outline'>Reset Cards</button>
                   
                   {/*<!-- Contenedor de tarjetas -->*/}
                   <div className="grid grid-cols-3 grid-gap-3">
