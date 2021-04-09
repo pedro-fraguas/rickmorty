@@ -18,7 +18,7 @@ function App() {
 
                   {
                     data.map(function(char, idx) {
-                        return < Card info={char} key={idx}/>
+                        return < Card info={char} key={idx} />
                     })
                   }
 
