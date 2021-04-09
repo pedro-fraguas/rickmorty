@@ -5,16 +5,20 @@ class Card extends Component{
         super(props);
         this.state = {
             originalColor: 'white',
+            defaultColor: 'white',
             color: 'white'
         }
     }
 
-    changeColor(color) {
-        console.log('Cambio de color a ' + color);
-        if (this.state.color == this.state.originalColor){
-            this.state.color = color
+    changeColor(newColor) {
+        this.setState({color: newColor})
+    }
+
+    changeDefaultColor(newColor) {
+        if (newColor === this.state.defaultColor){
+            this.setState({defaultColor: this.state.originalColor})
         } else {
-            this.state.color = this.state.originalColor
+            this.setState({defaultColor: newColor})
         }
     }
 
@@ -22,7 +26,8 @@ class Card extends Component{
         return (
             <div 
             className="card u-flex u-flex-column" 
-            onClick={() => this.changeColor('red')}
+            onMouseEnter={() => this.changeColor('lightblue')}
+            onMouseLeave={() => this.changeColor(this.state.defaultColor)}
             style = {{backgroundColor: this.state.color}}
             >
 
@@ -30,11 +35,19 @@ class Card extends Component{
                     <div className="card__image" style={{"backgroundImage": "url(" + this.props.info.image + ")"}}></div>
                 </div>
             
-                <div className="content" style={{"backgroundColor": this.state.color}}>
+                <div className="content">
                    <p className="title">{this.props.info.name}</p>
                    <p>Status: {this.props.info.status}</p>
                    <p>Species: {this.props.info.species}</p>
                    <p>Origin: {this.props.info.origin.name}</p>
+                </div>
+
+                <div className="card__action-bar u-center">
+                    <button 
+                    className="btn-link outline" 
+                    onClick={() => this.changeDefaultColor('lightgreen')}
+                    >Change Color</button>
+                    <button className="btn-link outline">Delete</button>
                 </div>
 
             </div>
