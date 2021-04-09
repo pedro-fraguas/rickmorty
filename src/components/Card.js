@@ -49,7 +49,12 @@ class Card extends Component{
                     >
                         Change Color
                     </button>
-                    <button className="btn-link outline">Delete</button>
+                    <button 
+                    className="btn-link outline"
+                    onClick={this.props.delete(this.props.info.id)}
+                    >
+                        Delete
+                    </button>
                 </div>
 
             </div>

@@ -4,7 +4,21 @@ import Card from './components/Card'
 import data from './rickandmorty.json'
 
 class App extends Component{
-  render(){
+  constructor(props) {
+    super(props);
+    this.state = {
+      characters: data,
+    }
+  }
+
+  deleteCard(key) {
+    function findCard(char) {
+      return char.id != key
+    }
+    this.setState({characters: this.state.characters.filter(findCard)})
+  }
+
+  render() {
     return (
       <div className="App">
         <header>
@@ -22,8 +36,8 @@ class App extends Component{
                   <div className="grid grid-cols-3 grid-gap-3">
   
                     {
-                      data.map(function(char, idx) {
-                        return < Card info={char} key={idx} />
+                      this.state.characters.map(function(char, idx) {
+                        return < Card key={idx} info={char} delete={this.deleteCard} />
                       })
                     }
   
