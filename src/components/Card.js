@@ -4,13 +4,18 @@ class Card extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            originalColor: this.props.originalColor,
-            color: this.props.color
+            originalColor: 'white',
+            color: 'white'
         }
     }
 
     changeColor(color) {
         console.log('Cambio de color a ' + color);
+        if (this.state.color == this.state.originalColor){
+            this.state.color = color
+        } else {
+            this.state.color = this.state.originalColor
+        }
     }
 
     render() {
@@ -25,7 +30,7 @@ class Card extends Component{
                     <div className="card__image" style={{"backgroundImage": "url(" + this.props.info.image + ")"}}></div>
                 </div>
             
-                <div className="content">
+                <div className="content" style={{"backgroundColor": this.state.color}}>
                    <p className="title">{this.props.info.name}</p>
                    <p>Status: {this.props.info.status}</p>
                    <p>Species: {this.props.info.species}</p>
