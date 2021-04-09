@@ -1,19 +1,35 @@
 import React, { Component } from 'react'
 
 class Card extends Component{
-    render(props){
-        return (
-            <div class="card u-flex u-flex-column">
+    constructor(props) {
+        super(props);
+        this.state = {
+            originalColor: this.props.originalColor,
+            color: this.props.color
+        }
+    }
 
-                <div class="card__container">
-                    <div class="card__image" style={{"background-image": "url(" + props.info.image + ")"}}></div>
+    changeColor(color) {
+        console.log('Cambio de color a ' + color);
+    }
+
+    render() {
+        return (
+            <div 
+            className="card u-flex u-flex-column" 
+            onClick={() => this.changeColor('red')}
+            style = {{backgroundColor: this.state.color}}
+            >
+
+                <div className="card__container">
+                    <div className="card__image" style={{"backgroundImage": "url(" + this.props.info.image + ")"}}></div>
                 </div>
             
-                <div class="content">
-                   <p class="title">{props.info.name}</p>
-                   <p>Status: {props.info.status}</p>
-                   <p>Species: {props.info.species}</p>
-                   <p>Origin: {props.info.origin.name}</p>
+                <div className="content">
+                   <p className="title">{this.props.info.name}</p>
+                   <p>Status: {this.props.info.status}</p>
+                   <p>Species: {this.props.info.species}</p>
+                   <p>Origin: {this.props.info.origin.name}</p>
                 </div>
 
             </div>
