@@ -9,13 +9,11 @@ class App extends Component{
     this.state = {
       characters: data,
     }
+    //this.deleteCard = this.deleteCard.bind(this)
   }
 
-  deleteCard(key) {
-    function findCard(char) {
-      return char.id != key
-    }
-    this.setState({characters: this.state.characters.filter(findCard)})
+  deleteCard = (key) => {
+    this.setState({characters: this.state.characters.filter(item => item.id != key)})
   }
 
   render() {
@@ -37,7 +35,7 @@ class App extends Component{
   
                     {
                       this.state.characters.map(function(char, idx) {
-                        return < Card key={idx} info={char} delete={this.deleteCard} />
+                        return < Card key={idx} info={char} onDelete={App.deleteCard} />
                       })
                     }
   

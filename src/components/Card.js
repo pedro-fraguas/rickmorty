@@ -51,7 +51,7 @@ class Card extends Component{
                     </button>
                     <button 
                     className="btn-link outline"
-                    onClick={this.props.delete(this.props.info.id)}
+                    onClick={() => this.props.onDelete(this.props.info.id)}
                     >
                         Delete
                     </button>
