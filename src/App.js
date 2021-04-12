@@ -27,16 +27,14 @@ class App extends Component{
         </header>
         <main>
           <section className="section" style={{'backgroundColor': '#FBF8F3'}}>
-            <div style={{textAlign: 'center', marginBottom: '-45px'}}>
-              <button 
-              className='btn-link outline reset-button' 
-              style={{marginTop: '15px'}}
-              onClick={() => this.resetCards()}
-              >
-                Reset Cards
-              </button>
-            </div>
-            <div className="hero" style={{paddingTop: 0}}>
+            <button 
+            className='btn-link outline reset-button' 
+            style={{position: 'absolute', left: '45%', top: '100px'}}
+            onClick={() => this.resetCards()}
+            >
+              Reset Cards
+            </button>
+            <div className="hero" style={{paddingTop: '45px'}}>
               <div className="hero-body">
                 <div className="content">
                 
