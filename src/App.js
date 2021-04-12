@@ -9,11 +9,14 @@ class App extends Component{
     this.state = {
       characters: data,
     }
-    //this.deleteCard = this.deleteCard.bind(this)
   }
 
   deleteCard = (key) => {
-    this.setState({characters: this.state.characters.filter(item => item.id != key)})
+    this.setState({characters: this.state.characters.filter(item => item.id !== key)})
+  }
+
+  resetCards = () => {
+    this.setState({characters: data})
   }
 
   render() {
@@ -24,18 +27,25 @@ class App extends Component{
         </header>
         <main>
           <section className="section" style={{'backgroundColor': '#FBF8F3'}}>
-            <div className="hero">
+            <div style={{textAlign: 'center', marginBottom: '-45px'}}>
+              <button 
+              className='btn-link outline reset-button' 
+              style={{marginTop: '15px'}}
+              onClick={() => this.resetCards()}
+              >
+                Reset Cards
+              </button>
+            </div>
+            <div className="hero" style={{paddingTop: 0}}>
               <div className="hero-body">
                 <div className="content">
-
-                  <button className='u-center btn-link outline'>Reset Cards</button>
-                  
+                
                   {/*<!-- Contenedor de tarjetas -->*/}
                   <div className="grid grid-cols-3 grid-gap-3">
   
                     {
-                      this.state.characters.map(function(char, idx) {
-                        return < Card key={idx} info={char} onDelete={App.deleteCard} />
+                      this.state.characters.map((char, idx) => {
+                        return < Card key={idx} info={char} onDelete={this.deleteCard} />
                       })
                     }
   
