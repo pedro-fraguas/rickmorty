@@ -22,7 +22,9 @@ class App extends Component{
   render() {
     return (
       <div className="App">
-        <header>
+        <header
+        style={{height: '80px', backgroundColor: 'darkgray', textAlign: 'center', paddingTop: '20px'}}
+        >
           <h2>Rick & Morty Characters</h2>
         </header>
         <main>
@@ -53,7 +55,11 @@ class App extends Component{
             </div>
           </section>
         </main>
-        <footer>
+        <footer
+        style={{height: '28px', backgroundColor: 'darkgray', paddingLeft: '15px', 
+          position: 'fixed', left: '0', bottom: '0', width: '100%', color: 'white'
+        }}
+        >
           <p>
             Pedro Fraguas
           </p>
