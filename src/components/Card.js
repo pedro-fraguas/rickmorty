@@ -22,10 +22,6 @@ class Card extends Component{
         }
     }
 
-    deleteCard() {
-        this.props.onDelete(this.props.info.id)
-    }
-
     render() {
         return (
             <div 

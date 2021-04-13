@@ -28,7 +28,7 @@ class App extends Component{
         <main>
           <section className="section" style={{'backgroundColor': '#FBF8F3'}}>
             <button 
-            className='btn-link outline reset-button' 
+            className='btn-link outline' 
             style={{position: 'absolute', left: '45%', top: '100px'}}
             onClick={() => this.resetCards()}
             >
