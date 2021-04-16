@@ -22,6 +22,10 @@ class Card extends Component{
         }
     }
 
+    componentWillUnmount() {
+        
+    }
+
     render() {
         return (
             <div 
